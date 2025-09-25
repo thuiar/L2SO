@@ -115,9 +115,8 @@ class Paras():
         #####################
         self.exp_debug_mode = False  # if debug
 
-        import datetime
-        timestamp = datetime.datetime.now().strftime("%Y%m%d_%H%M%S")
-        self.exp_output_path = f"./tsp_output/{timestamp}"  # 输出文件夹，带时间戳
+        base_output_path = os.getenv('TSP_OUTPUT_PATH', './tsp_output')
+        self.exp_output_path = f"{base_output_path}"
         self.exp_n_proc = 1
         
         #####################
@@ -442,7 +441,7 @@ class TSPGLS():
         self.perturbation_moves = 1 
         
         # Path to training data (Requirement R2)
-        self.instance_path = './TrainingData' 
+        self.instance_path = os.getenv('TSP_INSTANCE_PATH', './TrainingData') 
         self.debug_mode = debug_mode
 
         # Load instances

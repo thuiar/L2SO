@@ -97,7 +97,7 @@ class Paras():
         ###  Exp settings  ###
         #####################
         self.exp_debug_mode = True  # Enable debug mode for parameter optimization
-        self.exp_output_path = "./BP_Parameter"  # default folder for outputs (will be updated with timestamp)
+        self.exp_output_path = os.getenv('BP_OUTPUT_PATH', './BP_Parameter')  # default folder for outputs
         self.exp_n_proc = 1
         
         #####################
@@ -2787,11 +2787,7 @@ if __name__ == "__main__":
                     opt_range_factor = 0.01
                    )
 
-    # Generate output folder with timestamp
-    timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
-    output_folder = f"./BP_output/{timestamp}"
-    paras.exp_output_path = output_folder
-    print(f"- Output folder set to: {output_folder}")
+    print(f"- Output folder set to: {paras.exp_output_path}")
 
     # initilization
     evolution = EVOL(paras)

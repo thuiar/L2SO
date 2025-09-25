@@ -1,11 +1,12 @@
 # L2SO
 
+<embed src="main.pdf" type="application/pdf"/>
+
 Official code implementation of "LLM-driven Streamlining Optimizer for Large-scale Mixed Integer Linear Programming Problems".
 
 ## Overview
 
 This repository implements an LLM-driven framework for automated algorithm design to accelerate solvers for large-scale optimization problems. It features a novel dual-layer evolutionary agent that guides a Large Language Model to generate problem-specific operators, holistically co-optimizing the entire solution pipeline. By leveraging Retrieval-Augmented Generation (RAG) for a knowledge-infused and efficient search, this method consistently discovers higher-quality solutions than state-of-the-art solvers on ultra-large-scale benchmarks and demonstrates strong generalization to a broader class of combinatorial optimization problems.
-
 
 ## Supported Problems
 
@@ -46,7 +47,22 @@ export LLM_API_ENDPOINT="your_actual_endpoint"
 export LLM_API_KEY="your_actual_key"
 ```
 
-### 2. Run Examples
+### 2. Configure Paths (Optional)
+
+The code uses environment variables to configure output and data paths. You can set them if you want to customize the locations:
+
+- `BP_OUTPUT_PATH`: Path for BP experiment outputs (default: `./BP_Parameter`)
+- `TSP_OUTPUT_PATH`: Base path for TSP experiment outputs (default: `./tsp_output`)
+- `TSP_INSTANCE_PATH`: Path to TSP training data (default: `./TrainingData`)
+
+Example:
+```
+export BP_OUTPUT_PATH="./my_bp_outputs"
+export TSP_OUTPUT_PATH="./my_tsp_outputs"
+export TSP_INSTANCE_PATH="./my_tsp_data"
+```
+
+### 3. Run Examples
 
 ```python
 python src/CO/BP/bp_update_parameter.py
