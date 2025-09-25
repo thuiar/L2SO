@@ -1,6 +1,6 @@
 # L2SO
 
-<embed src="main.pdf" type="application/pdf"/>
+![](main.jpg)
 
 Official code implementation of "LLM-driven Streamlining Optimizer for Large-scale Mixed Integer Linear Programming Problems".
 
