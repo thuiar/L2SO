@@ -1,0 +1,7 @@
+astor==0.8.1
+joblib==1.5.1
+networkx==3.4.2
+numba==0.59.1
+numpy==2.3.3
+optuna==4.5.0
+Requests==2.32.5
